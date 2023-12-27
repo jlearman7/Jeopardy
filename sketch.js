@@ -10,9 +10,11 @@ function preload(){
   board5 = loadStrings("Board5.txt");
   board6 = loadStrings("Board6.txt");
 }
+
 function setup() {
   col =color(6, 12, 233);
   createCanvas(400, 400);
+  background(6, 12, 233);
   textFont(myFont);
   writer1 = createWriter('Board1.txt');
   
@@ -25,8 +27,7 @@ function setup() {
   
   
   mainMenu();
-  openBoard1();
-  
+  //openBoard1();
   
 }
 //loop
@@ -42,6 +43,7 @@ function output(){
 }
 
 function mainMenu(){
+  background(6, 12, 233);
   if(typeof btn1 != "undefined"){
     btn1.remove();
   }
@@ -75,7 +77,7 @@ function mainMenu(){
   if(typeof btn6 != "undefined"){
     btn6.remove();
   }
-  if(typeof ebtn5 != "undefined"){
+  if(typeof ebtn6 != "undefined"){
     ebtn6.remove();
   }
   if(typeof topicA != "undefined"){
@@ -105,7 +107,6 @@ function mainMenu(){
   if(typeof mmbtn != "undefined"){
     mmbtn.remove();
   }
-  
   if(typeof bbtn != "undefined"){
     bbtn.remove();
   }
@@ -115,8 +116,22 @@ function mainMenu(){
   if(typeof nameA != "undefined"){
     nameA.remove();
   }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
   
-  background(6, 12, 233);
   btn1 = createButton(board1[0]);
   btn1.mouseClicked(openBoard1);
   btn1.size(125, 50);
@@ -129,7 +144,7 @@ function mainMenu(){
   ebtn1.size(50, 50);
   ebtn1.position(145, 100);
   ebtn1.style("font-family", myFont);
-  ebtn1.style("font-size", "25px")
+  ebtn1.style("font-size", "25px");
   
   btn2 = createButton(b2.name);
   btn2.mouseClicked(openBoard2);
@@ -247,7 +262,7 @@ function nameMenu(){
   if(typeof btn6 != "undefined"){
     btn6.remove();
   }
-  if(typeof ebtn5 != "undefined"){
+  if(typeof ebtn6 != "undefined"){
     ebtn6.remove();
   }
   if(typeof topicA != "undefined"){
@@ -280,6 +295,21 @@ function nameMenu(){
   if(typeof dbtn != "undefined"){
     dbtn.remove();
   }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
   
   textAlign(CENTER);
   background(6, 12, 233);
@@ -299,6 +329,7 @@ function nameMenu(){
   nbtn.style("font-family", myFont);
   nbtn.style("font-size", "20px")
 }
+
 function b1t1(){
   writer1.write(nameA.value());
   textAlign(CENTER);
@@ -336,7 +367,7 @@ function b1t1(){
   if(typeof btn6 != "undefined"){
     btn6.remove();
   }
-  if(typeof ebtn5 != "undefined"){
+  if(typeof ebtn6 != "undefined"){
     ebtn6.remove();
   }
   if(typeof topicA != "undefined"){
@@ -366,24 +397,34 @@ function b1t1(){
   if(typeof mmbtn != "undefined"){
     mmbtn.remove();
   }
-  
-  
-  
-  //reposition buttons on the bottom
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
   
   bbtn = createButton("Back");
   bbtn.mouseClicked(nameMenu);
   bbtn.size(100, 40);
   bbtn.position(15, 355);
   bbtn.style("font-family", myFont);
-  bbtn.style("font-size", "20px")
+  bbtn.style("font-size", "20px");
   
   
   mmbtn = createButton("Main Menu");
   mmbtn.mouseClicked(mainMenu);
   mmbtn.size(100, 40);
-  mmbtn.position(140, 355);
-  mmbtn.style("font-family", myFont);
+  mmbtn.position(140, 355);   
   mmbtn.style("font-size", "15px")
   
   nbtn = createButton("Next");
@@ -400,55 +441,149 @@ function b1t1(){
   topic = text("Topic 1:", 100, 100);
   topicA = createInput();
   topicA.position(200, 83);
-  one = text("100:", 100, 150)
+  
+  one = text("100:", 100, 125)
   oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
+  oneA.position(200, 107);
+  onet = text("Answer:", 100, 150)
+  oneQ = createInput();
+  oneQ.position(200, 131);
+  
+  two = text("200:", 100, 175)
   twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
+  twoA.position(200, 155);
+  twot = text("Answer:", 100, 200);
+  twoQ = createInput();
+  twoQ.position(200, 179);
+  
+  three = text("300:", 100, 225);
   threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
+  threeA.position(200, 203);
+  threet = text("Answer:", 100, 250);
+  threeQ = createInput();
+  threeQ.position(200, 227);
+  
+  four = text("400:", 100, 275)
   fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
+  fourA.position(200, 251);
+  fourt = text("Answer:", 100, 300)
+  fourQ = createInput();
+  fourQ.position(200, 275);
+  
+  five = text("500:", 100, 325)
   fiveA = createInput();
-  fiveA.position(200, 331);
+  fiveA.position(200, 299);
+  fivet = text("Answer:", 100, 350)
+  fiveQ = createInput();
+  fiveQ.position(200, 323);
 }
+
 function b1t2(){
   writer1.write("\n"+topicA.value());
   writer1.write("\n"+oneA.value());
+  writer1.write("\n"+oneQ.value());
   writer1.write("\n"+twoA.value());
+  writer1.write("\n"+twoQ.value());
   writer1.write("\n"+threeA.value());
+  writer1.write("\n"+threeQ.value());
   writer1.write("\n"+fourA.value());
+  writer1.write("\n"+fourQ.value());
   writer1.write("\n"+fiveA.value());
+  writer1.write("\n"+fiveQ.value());
+  writer1.write(nameA.value());
+  
   textAlign(CENTER);
   background(6, 12, 233);
-  topicA.remove()
-  btn1.remove();
-  oneA.remove();
-  btn2.remove();
-  twoA.remove();
-  btn3.remove();
-  threeA.remove();
-  btn4.remove();
-  fourA.remove();
-  btn5.remove();
-  fiveA.remove();
-  btn6.remove();
-  nbtn.remove();
-  mmbtn.remove();
-  bbtn.remove();
+  if(typeof btn1 != "undefined"){
+    btn1.remove();
+  }
+  if(typeof ebtn1 != "undefined"){
+    ebtn1.remove();
+  }
+  if(typeof btn2 != "undefined"){
+    btn2.remove();
+  }
+  if(typeof ebtn2 != "undefined"){
+    ebtn2.remove();
+  }
+  if(typeof btn3 != "undefined"){
+    btn3.remove();
+  }
+  if(typeof ebtn3 != "undefined"){
+    ebtn3.remove();
+  }
+  if(typeof btn4 != "undefined"){
+    btn4.remove();
+  }
+  if(typeof ebtn4 != "undefined"){
+    ebtn4.remove();
+  }
+  if(typeof btn5 != "undefined"){
+    btn5.remove();
+  }
+  if(typeof ebtn5 != "undefined"){
+    ebtn5.remove();
+  }
+  if(typeof btn6 != "undefined"){
+    btn6.remove();
+  }
+  if(typeof ebtn6 != "undefined"){
+    ebtn6.remove();
+  }
+  if(typeof topicA != "undefined"){
+    topicA.remove();
+  }
+  if(typeof oneA != "undefined"){
+    oneA.remove();
+  }
+  if(typeof twoA != "undefined"){
+    twoA.remove();
+  }
+  if(typeof threeA != "undefined"){
+    threeA.remove();
+  }
+  if(typeof fourA != "undefined"){
+    fourA.remove();
+  }
+  if(typeof fiveA != "undefined"){
+    fiveA.remove();
+  }
+  if(typeof bbtn != "undefined"){
+    bbtn.remove();
+  }
+  if(typeof nbtn != "undefined"){
+    nbtn.remove();
+  }
+  if(typeof mmbtn != "undefined"){
+    mmbtn.remove();
+  }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
+  
+  
   
   //reposition buttons on the bottom
-
+  
   bbtn = createButton("Back");
   bbtn.mouseClicked(b1t1);
   bbtn.size(100, 40);
   bbtn.position(15, 355);
   bbtn.style("font-family", myFont);
   bbtn.style("font-size", "20px")
+  
   
   mmbtn = createButton("Main Menu");
   mmbtn.mouseClicked(mainMenu);
@@ -464,61 +599,155 @@ function b1t2(){
   nbtn.style("font-family", myFont);
   nbtn.style("font-size", "20px")
   
+  fill(255);
   textSize(50);
   title = text(board1[0], 200, 50);
   textSize(25);
   topic = text("Topic 2:", 100, 100);
   topicA = createInput();
   topicA.position(200, 83);
-  one = text("100:", 100, 150)
+  
+  one = text("100:", 100, 125)
   oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
+  oneA.position(200, 107);
+  onet = text("Answer:", 100, 150)
+  oneQ = createInput();
+  oneQ.position(200, 131);
+  
+  two = text("200:", 100, 175)
   twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
+  twoA.position(200, 155);
+  twot = text("Answer:", 100, 200);
+  twoQ = createInput();
+  twoQ.position(200, 179);
+  
+  three = text("300:", 100, 225);
   threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
+  threeA.position(200, 203);
+  threet = text("Answer:", 100, 250);
+  threeQ = createInput();
+  threeQ.position(200, 227);
+  
+  four = text("400:", 100, 275)
   fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
+  fourA.position(200, 251);
+  fourt = text("Answer:", 100, 300)
+  fourQ = createInput();
+  fourQ.position(200, 275);
+  
+  five = text("500:", 100, 325)
   fiveA = createInput();
-  fiveA.position(200, 331);
+  fiveA.position(200, 299);
+  fivet = text("Answer:", 100, 350)
+  fiveQ = createInput();
+  fiveQ.position(200, 323);
 }
 function b1t3(){
   writer1.write("\n"+topicA.value());
   writer1.write("\n"+oneA.value());
+  writer1.write("\n"+oneQ.value());
   writer1.write("\n"+twoA.value());
+  writer1.write("\n"+twoQ.value());
   writer1.write("\n"+threeA.value());
+  writer1.write("\n"+threeQ.value());
   writer1.write("\n"+fourA.value());
+  writer1.write("\n"+fourQ.value());
   writer1.write("\n"+fiveA.value());
+  writer1.write("\n"+fiveQ.value());
+  writer1.write(nameA.value());
+  
   textAlign(CENTER);
   background(6, 12, 233);
-  topicA.remove()
-  btn1.remove();
-  oneA.remove();
-  btn2.remove();
-  twoA.remove();
-  btn3.remove();
-  threeA.remove();
-  btn4.remove();
-  fourA.remove();
-  btn5.remove();
-  fiveA.remove();
-  btn6.remove();
-  nbtn.remove();
-  bbtn.remove();
-  mmbtn.remove();
+  if(typeof btn1 != "undefined"){
+    btn1.remove();
+  }
+  if(typeof ebtn1 != "undefined"){
+    ebtn1.remove();
+  }
+  if(typeof btn2 != "undefined"){
+    btn2.remove();
+  }
+  if(typeof ebtn2 != "undefined"){
+    ebtn2.remove();
+  }
+  if(typeof btn3 != "undefined"){
+    btn3.remove();
+  }
+  if(typeof ebtn3 != "undefined"){
+    ebtn3.remove();
+  }
+  if(typeof btn4 != "undefined"){
+    btn4.remove();
+  }
+  if(typeof ebtn4 != "undefined"){
+    ebtn4.remove();
+  }
+  if(typeof btn5 != "undefined"){
+    btn5.remove();
+  }
+  if(typeof ebtn5 != "undefined"){
+    ebtn5.remove();
+  }
+  if(typeof btn6 != "undefined"){
+    btn6.remove();
+  }
+  if(typeof ebtn6 != "undefined"){
+    ebtn6.remove();
+  }
+  if(typeof topicA != "undefined"){
+    topicA.remove();
+  }
+  if(typeof oneA != "undefined"){
+    oneA.remove();
+  }
+  if(typeof twoA != "undefined"){
+    twoA.remove();
+  }
+  if(typeof threeA != "undefined"){
+    threeA.remove();
+  }
+  if(typeof fourA != "undefined"){
+    fourA.remove();
+  }
+  if(typeof fiveA != "undefined"){
+    fiveA.remove();
+  }
+  if(typeof bbtn != "undefined"){
+    bbtn.remove();
+  }
+  if(typeof nbtn != "undefined"){
+    nbtn.remove();
+  }
+  if(typeof mmbtn != "undefined"){
+    mmbtn.remove();
+  }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
+  
+  
   
   //reposition buttons on the bottom
-
+  
   bbtn = createButton("Back");
   bbtn.mouseClicked(b1t2);
   bbtn.size(100, 40);
   bbtn.position(15, 355);
   bbtn.style("font-family", myFont);
   bbtn.style("font-size", "20px")
+  
   
   mmbtn = createButton("Main Menu");
   mmbtn.mouseClicked(mainMenu);
@@ -534,61 +763,156 @@ function b1t3(){
   nbtn.style("font-family", myFont);
   nbtn.style("font-size", "20px")
   
+  fill(255);
   textSize(50);
   title = text(board1[0], 200, 50);
   textSize(25);
   topic = text("Topic 3:", 100, 100);
   topicA = createInput();
   topicA.position(200, 83);
-  one = text("100:", 100, 150)
+  
+  one = text("100:", 100, 125)
   oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
+  oneA.position(200, 107);
+  onet = text("Answer:", 100, 150)
+  oneQ = createInput();
+  oneQ.position(200, 131);
+  
+  two = text("200:", 100, 175)
   twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
+  twoA.position(200, 155);
+  twot = text("Answer:", 100, 200);
+  twoQ = createInput();
+  twoQ.position(200, 179);
+  
+  three = text("300:", 100, 225);
   threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
+  threeA.position(200, 203);
+  threet = text("Answer:", 100, 250);
+  threeQ = createInput();
+  threeQ.position(200, 227);
+  
+  four = text("400:", 100, 275)
   fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
+  fourA.position(200, 251);
+  fourt = text("Answer:", 100, 300)
+  fourQ = createInput();
+  fourQ.position(200, 275);
+  
+  five = text("500:", 100, 325)
   fiveA = createInput();
-  fiveA.position(200, 331);
+  fiveA.position(200, 299);
+  fivet = text("Answer:", 100, 350)
+  fiveQ = createInput();
+  fiveQ.position(200, 323);
 }
+
 function b1t4(){
   writer1.write("\n"+topicA.value());
   writer1.write("\n"+oneA.value());
+  writer1.write("\n"+oneQ.value());
   writer1.write("\n"+twoA.value());
+  writer1.write("\n"+twoQ.value());
   writer1.write("\n"+threeA.value());
+  writer1.write("\n"+threeQ.value());
   writer1.write("\n"+fourA.value());
+  writer1.write("\n"+fourQ.value());
   writer1.write("\n"+fiveA.value());
+  writer1.write("\n"+fiveQ.value());
+  writer1.write(nameA.value());
+  
   textAlign(CENTER);
   background(6, 12, 233);
-  topicA.remove()
-  btn1.remove();
-  oneA.remove();
-  btn2.remove();
-  twoA.remove();
-  btn3.remove();
-  threeA.remove();
-  btn4.remove();
-  fourA.remove();
-  btn5.remove();
-  fiveA.remove();
-  btn6.remove();
-  nbtn.remove();
-  bbtn.remove();
-  mmbtn.remove();
+  if(typeof btn1 != "undefined"){
+    btn1.remove();
+  }
+  if(typeof ebtn1 != "undefined"){
+    ebtn1.remove();
+  }
+  if(typeof btn2 != "undefined"){
+    btn2.remove();
+  }
+  if(typeof ebtn2 != "undefined"){
+    ebtn2.remove();
+  }
+  if(typeof btn3 != "undefined"){
+    btn3.remove();
+  }
+  if(typeof ebtn3 != "undefined"){
+    ebtn3.remove();
+  }
+  if(typeof btn4 != "undefined"){
+    btn4.remove();
+  }
+  if(typeof ebtn4 != "undefined"){
+    ebtn4.remove();
+  }
+  if(typeof btn5 != "undefined"){
+    btn5.remove();
+  }
+  if(typeof ebtn5 != "undefined"){
+    ebtn5.remove();
+  }
+  if(typeof btn6 != "undefined"){
+    btn6.remove();
+  }
+  if(typeof ebtn6 != "undefined"){
+    ebtn6.remove();
+  }
+  if(typeof topicA != "undefined"){
+    topicA.remove();
+  }
+  if(typeof oneA != "undefined"){
+    oneA.remove();
+  }
+  if(typeof twoA != "undefined"){
+    twoA.remove();
+  }
+  if(typeof threeA != "undefined"){
+    threeA.remove();
+  }
+  if(typeof fourA != "undefined"){
+    fourA.remove();
+  }
+  if(typeof fiveA != "undefined"){
+    fiveA.remove();
+  }
+  if(typeof bbtn != "undefined"){
+    bbtn.remove();
+  }
+  if(typeof nbtn != "undefined"){
+    nbtn.remove();
+  }
+  if(typeof mmbtn != "undefined"){
+    mmbtn.remove();
+  }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
+  
+  
   
   //reposition buttons on the bottom
-
+  
   bbtn = createButton("Back");
   bbtn.mouseClicked(b1t3);
   bbtn.size(100, 40);
   bbtn.position(15, 355);
   bbtn.style("font-family", myFont);
   bbtn.style("font-size", "20px")
+  
   
   mmbtn = createButton("Main Menu");
   mmbtn.mouseClicked(mainMenu);
@@ -604,55 +928,149 @@ function b1t4(){
   nbtn.style("font-family", myFont);
   nbtn.style("font-size", "20px")
   
+  fill(255);
   textSize(50);
   title = text(board1[0], 200, 50);
   textSize(25);
   topic = text("Topic 4:", 100, 100);
   topicA = createInput();
   topicA.position(200, 83);
-  one = text("100:", 100, 150)
+  
+  one = text("100:", 100, 125)
   oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
+  oneA.position(200, 107);
+  onet = text("Answer:", 100, 150)
+  oneQ = createInput();
+  oneQ.position(200, 131);
+  
+  two = text("200:", 100, 175)
   twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
+  twoA.position(200, 155);
+  twot = text("Answer:", 100, 200);
+  twoQ = createInput();
+  twoQ.position(200, 179);
+  
+  three = text("300:", 100, 225);
   threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
+  threeA.position(200, 203);
+  threet = text("Answer:", 100, 250);
+  threeQ = createInput();
+  threeQ.position(200, 227);
+  
+  four = text("400:", 100, 275)
   fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
+  fourA.position(200, 251);
+  fourt = text("Answer:", 100, 300)
+  fourQ = createInput();
+  fourQ.position(200, 275);
+  
+  five = text("500:", 100, 325)
   fiveA = createInput();
-  fiveA.position(200, 331);
+  fiveA.position(200, 299);
+  fivet = text("Answer:", 100, 350)
+  fiveQ = createInput();
+  fiveQ.position(200, 323);
 }
+
 function b1t5(){
   writer1.write("\n"+topicA.value());
   writer1.write("\n"+oneA.value());
+  writer1.write("\n"+oneQ.value());
   writer1.write("\n"+twoA.value());
+  writer1.write("\n"+twoQ.value());
   writer1.write("\n"+threeA.value());
+  writer1.write("\n"+threeQ.value());
   writer1.write("\n"+fourA.value());
+  writer1.write("\n"+fourQ.value());
   writer1.write("\n"+fiveA.value());
+  writer1.write("\n"+fiveQ.value());
+  writer1.write(nameA.value());
+  
   textAlign(CENTER);
   background(6, 12, 233);
-  topicA.remove()
-  btn1.remove();
-  oneA.remove();
-  btn2.remove();
-  twoA.remove();
-  btn3.remove();
-  threeA.remove();
-  btn4.remove();
-  fourA.remove();
-  btn5.remove();
-  fiveA.remove();
-  btn6.remove();
-  nbtn.remove();
-  bbtn.remove();
-  mmbtn.remove();
+  if(typeof btn1 != "undefined"){
+    btn1.remove();
+  }
+  if(typeof ebtn1 != "undefined"){
+    ebtn1.remove();
+  }
+  if(typeof btn2 != "undefined"){
+    btn2.remove();
+  }
+  if(typeof ebtn2 != "undefined"){
+    ebtn2.remove();
+  }
+  if(typeof btn3 != "undefined"){
+    btn3.remove();
+  }
+  if(typeof ebtn3 != "undefined"){
+    ebtn3.remove();
+  }
+  if(typeof btn4 != "undefined"){
+    btn4.remove();
+  }
+  if(typeof ebtn4 != "undefined"){
+    ebtn4.remove();
+  }
+  if(typeof btn5 != "undefined"){
+    btn5.remove();
+  }
+  if(typeof ebtn5 != "undefined"){
+    ebtn5.remove();
+  }
+  if(typeof btn6 != "undefined"){
+    btn6.remove();
+  }
+  if(typeof ebtn6 != "undefined"){
+    ebtn6.remove();
+  }
+  if(typeof topicA != "undefined"){
+    topicA.remove();
+  }
+  if(typeof oneA != "undefined"){
+    oneA.remove();
+  }
+  if(typeof twoA != "undefined"){
+    twoA.remove();
+  }
+  if(typeof threeA != "undefined"){
+    threeA.remove();
+  }
+  if(typeof fourA != "undefined"){
+    fourA.remove();
+  }
+  if(typeof fiveA != "undefined"){
+    fiveA.remove();
+  }
+  if(typeof bbtn != "undefined"){
+    bbtn.remove();
+  }
+  if(typeof nbtn != "undefined"){
+    nbtn.remove();
+  }
+  if(typeof mmbtn != "undefined"){
+    mmbtn.remove();
+  }
+  if(typeof oneQ != "undefined"){
+    oneQ.remove();
+  }
+  if(typeof twoQ != "undefined"){
+    twoQ.remove();
+  }
+  if(typeof threeQ != "undefined"){
+    threeQ.remove();
+  }
+  if(typeof fourQ != "undefined"){
+    fourQ.remove();
+  }
+  if(typeof fiveQ != "undefined"){
+    fiveQ.remove();
+  }
+  
+  
   
   //reposition buttons on the bottom
-
+  
   bbtn = createButton("Back");
   bbtn.mouseClicked(b1t4);
   bbtn.size(100, 40);
@@ -660,77 +1078,6 @@ function b1t5(){
   bbtn.style("font-family", myFont);
   bbtn.style("font-size", "20px")
   
-  mmbtn = createButton("Main Menu");
-  mmbtn.mouseClicked(mainMenu);
-  mmbtn.size(100, 40);
-  mmbtn.position(140, 355);
-  mmbtn.style("font-family", myFont);
-  mmbtn.style("font-size", "15px")
-  
-  
-  nbtn = createButton("Next");
-  nbtn.mouseClicked(b1t6);
-  nbtn.size(100, 40);
-  nbtn.position(265, 355);
-  nbtn.style("font-family", myFont);
-  nbtn.style("font-size", "20px")
-  
-  
-  textSize(50);
-  title = text(board1[0], 200, 50);
-  textSize(25);
-  topic = text("Topic 5:", 100, 100);
-  topicA = createInput();
-  topicA.position(200, 83);
-  one = text("100:", 100, 150)
-  oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
-  twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
-  threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
-  fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
-  fiveA = createInput();
-  fiveA.position(200, 331);
-}
-function b1t6(){
-  writer1.write("\n"+topicA.value());
-  writer1.write("\n"+oneA.value());
-  writer1.write("\n"+twoA.value());
-  writer1.write("\n"+threeA.value());
-  writer1.write("\n"+fourA.value());
-  writer1.write("\n"+fiveA.value());
-  textAlign(CENTER);
-  background(6, 12, 233);
-  topicA.remove()
-  btn1.remove();
-  oneA.remove();
-  btn2.remove();
-  twoA.remove();
-  btn3.remove();
-  threeA.remove();
-  btn4.remove();
-  fourA.remove();
-  btn5.remove();
-  fiveA.remove();
-  btn6.remove();
-  nbtn.remove();
-  bbtn.remove();
-  mmbtn.remove();
-  
-  //reposition buttons on the bottom
-
-  bbtn = createButton("Back");
-  bbtn.mouseClicked(b1t4);
-  bbtn.size(100, 40);
-  bbtn.position(15, 355);
-  bbtn.style("font-family", myFont);
-  bbtn.style("font-size", "20px")
   
   mmbtn = createButton("Main Menu");
   mmbtn.mouseClicked(mainMenu);
@@ -738,7 +1085,6 @@ function b1t6(){
   mmbtn.position(140, 355);
   mmbtn.style("font-family", myFont);
   mmbtn.style("font-size", "15px")
-  
   
   dbtn = createButton("Done");
   dbtn.mouseClicked(saved);
@@ -747,28 +1093,48 @@ function b1t6(){
   dbtn.style("font-family", myFont);
   dbtn.style("font-size", "20px")
   
-  
+  fill(255);
   textSize(50);
   title = text(board1[0], 200, 50);
   textSize(25);
-  topic = text("Topic 6:", 100, 100);
+  topic = text("Topic 5:", 100, 100);
   topicA = createInput();
   topicA.position(200, 83);
-  one = text("100:", 100, 150)
+  
+  one = text("100:", 100, 125)
   oneA = createInput();
-  oneA.position(200, 132);
-  two = text("200:", 100, 200)
+  oneA.position(200, 107);
+  onet = text("Answer:", 100, 150)
+  oneQ = createInput();
+  oneQ.position(200, 131);
+  
+  two = text("200:", 100, 175)
   twoA = createInput();
-  twoA.position(200, 181);
-  three = text("300:", 100, 250);
+  twoA.position(200, 155);
+  twot = text("Answer:", 100, 200);
+  twoQ = createInput();
+  twoQ.position(200, 179);
+  
+  three = text("300:", 100, 225);
   threeA = createInput();
-  threeA.position(200, 231);
-  four = text("400:", 100, 300)
+  threeA.position(200, 203);
+  threet = text("Answer:", 100, 250);
+  threeQ = createInput();
+  threeQ.position(200, 227);
+  
+  four = text("400:", 100, 275)
   fourA = createInput();
-  fourA.position(200, 281);
-  five = text("500:", 100, 350)
+  fourA.position(200, 251);
+  fourt = text("Answer:", 100, 300)
+  fourQ = createInput();
+  fourQ.position(200, 275);
+  
+  five = text("500:", 100, 325)
   fiveA = createInput();
-  fiveA.position(200, 331);
+  fiveA.position(200, 299);
+  fivet = text("Answer:", 100, 350)
+  fiveQ = createInput();
+  fiveQ.position(200, 323);
 }
 function eb2t1(){
   
@@ -819,7 +1185,7 @@ function openBoard1(){
   if(typeof btn6 != "undefined"){
     btn6.remove();
   }
-  if(typeof ebtn5 != "undefined"){
+  if(typeof ebtn6 != "undefined"){
     ebtn6.remove();
   }
   if(typeof topicA != "undefined"){
@@ -1202,7 +1568,49 @@ function openBoard1(){
   t65.style("background-color",col);
 }
 function b1t11(){
+  t1.remove();
+  t2.remove();
+  t3.remove();
+  t4.remove();
+  t5.remove();
+  t6.remove();
+  t11.remove();
+  t12.remove();
+  t13.remove();
+  t14.remove();
+  t15.remove();
+  t21.remove();
+  t22.remove();
+  t23.remove();
+  t24.remove();
+  t25.remove();
+  t31.remove();
+  t32.remove();
+  t33.remove();
+  t34.remove();
+  t35.remove();
+  t41.remove();
+  t42.remove();
+  t43.remove();
+  t44.remove();
+  t45.remove();
+  t51.remove();
+  t52.remove();
+  t53.remove();
+  t54.remove();
+  t55.remove();
+  t61.remove();
+  t62.remove();
+  t63.remove();
+  t64.remove();
+  t65.remove();
   
+  background(6, 12, 233);
+  textSize(50);
+  fill('#FFCC00');
+  textAlign(CENTER);
+  question = text(b1.questions[1], 960, 540);
+
 }
 
 function openBoard2(num){
