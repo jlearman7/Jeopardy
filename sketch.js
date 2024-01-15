@@ -1,4 +1,7 @@
 let topicA, gridSpacingx, gridSpacingy;
+p1NameFontSize = "50px";
+p2NameFontSize = "50px";
+p3NameFontSize = "50px"
 let value = 0;
 let fontSize = '100px';
 let textFontSize = 50;
@@ -54,6 +57,9 @@ function preload(){
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
+  background(0);
+  gridSpacingx = (windowWidth -35)/6;
+  gridSpacingy = (windowHeight-40)/7;
   if(windowWidth<700){
     fontSize = '35px';
   }
@@ -64,6 +70,8 @@ function windowResized() {
     fontSize = '65px'  
   }
   print(windowWidth);
+  
+  mainMenu();
 }
 
 function setup() {
@@ -84,8 +92,7 @@ function setup() {
   b5 = new Board(board5[0], [board5[1], board5[2], board5[3], board5[4], board5[5], board5[6], board5[7], board5[8], board5[9], board5[10], board5[11], board5[12], board5[13], board5[14], board5[15], board5[16], board5[17], board5[18], board5[19], board5[20], board5[21], board5[22], board5[23], board5[24], board5[25], board5[26], board5[27], board5[28], board5[29], board5[30], board5[31], board5[32], board5[33], board5[34], board5[35], board5[36]]);
   b6 = new Board(board6[0], [board6[1], board6[2], board6[3], board6[4], board6[5], board6[6], board6[7], board6[8], board6[9], board6[10], board6[11], board6[12], board6[13], board6[14], board6[15], board6[16], board6[17], board6[18], board6[19], board6[20], board6[21], board6[22], board6[23], board6[24], board6[25], board6[26], board6[27], board6[28], board6[29], board6[30], board6[31], board6[32], board6[33], board6[34], board6[35], board6[36]]);
   
-  gridSpacingx = (windowWidth -35)/6;
-  gridSpacingy = (windowHeight-40)/7;
+  
   
   windowResized();
   
@@ -194,9 +201,153 @@ function mainMenu(){
   if(typeof fiveQ != "undefined"){
     fiveQ.remove();
   }
+  if(typeof player1 != "undefined"){
+    player1.remove();
+  }
+  if(typeof player1Correct != "undefined"){
+    player1Correct.remove();
+  }
+  if(typeof player1Wrong != "undefined"){
+    player1Wrong.remove();
+  }
+  if(typeof player2 != "undefined"){
+    player2.remove();
+  }
+  if(typeof player2Correct != "undefined"){
+    player2Correct.remove();
+  }
+  if(typeof player2Wrong != "undefined"){
+    player2Wrong.remove();
+  }
+  if(typeof player3 != "undefined"){
+    player3.remove();
+  }
+  if(typeof player3Correct != "undefined"){
+    player3Correct.remove();
+  }
+  if(typeof player3Wrong != "undefined"){
+    player3Wrong.remove();
+  }
+  if(typeof t1 != "undefined"){
+    t1.remove();
+  }
+  if(typeof t2 != "undefined"){
+    t2.remove();
+  }
+  if(typeof t3 != "undefined"){
+    t3.remove();
+  }
+  if(typeof t4 != "undefined"){
+    t4.remove();
+  }
+  if(typeof t5 != "undefined"){
+    t5.remove();
+  }
+  if(typeof t6 != "undefined"){
+    t6.remove();
+  }
+  if(typeof t11 != "undefined"){
+    t11.remove();
+  }
+  if(typeof t12 != "undefined"){
+    t12.remove();
+  }
+  if(typeof t13 != "undefined"){
+    t13.remove();
+  }
+  if(typeof t14 != "undefined"){
+    t14.remove();
+  }
+  if(typeof t15 != "undefined"){
+    t15.remove();
+  }
+  if(typeof t21 != "undefined"){
+    t21.remove();
+  }
+  if(typeof t22 != "undefined"){
+    t22.remove();
+  }
+  if(typeof t23 != "undefined"){
+    t23.remove();
+  }
+  if(typeof t24 != "undefined"){
+    t24.remove();
+  }
+  if(typeof t25 != "undefined"){
+    t25.remove();
+  }
+  if(typeof t31 != "undefined"){
+    t31.remove();
+  }
+  if(typeof t32 != "undefined"){
+    t32.remove();
+  }
+  if(typeof t33 != "undefined"){
+    t33.remove();
+  }
+  if(typeof t34 != "undefined"){
+    t34.remove();
+  }
+  if(typeof t35 != "undefined"){
+    t35.remove();
+  }
+  if(typeof t41 != "undefined"){
+    t41.remove();
+  }
+  if(typeof t42 != "undefined"){
+    t42.remove();
+  }
+  if(typeof t43 != "undefined"){
+    t43.remove();
+  }
+  if(typeof t44 != "undefined"){
+    t44.remove();
+  }
+  if(typeof t45 != "undefined"){
+    t45.remove();
+  }
+  if(typeof t51 != "undefined"){
+    t51.remove();
+  }
+  if(typeof t52 != "undefined"){
+    t52.remove();
+  }
+  if(typeof t53 != "undefined"){
+    t53.remove();
+  }
+  if(typeof t54 != "undefined"){
+    t54.remove();
+  }
+  if(typeof t55 != "undefined"){
+    t55.remove();
+  }
+  if(typeof t61 != "undefined"){
+    t61.remove();
+  }
+  if(typeof t62 != "undefined"){
+    t62.remove();
+  }
+  if(typeof t63 != "undefined"){
+    t63.remove();
+  }
+  if(typeof t64 != "undefined"){
+    t64.remove();
+  }
+  if(typeof t65 != "undefined"){
+    t65.remove();
+  }
+  if(typeof name1A != "undefined"){
+    name1A.remove();
+  }
+  if(typeof name2A != "undefined"){
+    name2A.remove();
+  }
+  if(typeof name3A != "undefined"){
+    name3A.remove();
+  }
   
   btn1 = createButton(board1[0]);
-  btn1.mouseClicked(openBoard1);
+  btn1.mouseClicked(getPlayers);
   btn1.size(125, 50);
   btn1.position(20, 100);
   btn1.style("font-family", myFont);
@@ -390,7 +541,7 @@ function nameMenu(){
   nbtn.size(100, 40);
   nbtn.position(265, 355);
   nbtn.style("font-family", myFont);
-  nbtn.style("font-size", "20px")
+  nbtn.style("font-size", "20px");
 }
 
 function b1t1(){
@@ -1282,6 +1433,154 @@ function openBoard1(){
   if(typeof mmbtn != "undefined"){
     mmbtn.remove();
   }
+  if(typeof name1A != "undefined"){
+    name1A.remove();
+  }
+  if(typeof name2A != "undefined"){
+    name2A.remove();
+  }
+  if(typeof name3A != "undefined"){
+    name3A.remove();
+  }
+  if(typeof t1 != "undefined"){
+    t1.remove();
+  }
+  if(typeof t2 != "undefined"){
+    t2.remove();
+  }
+  if(typeof t3 != "undefined"){
+    t3.remove();
+  }
+  if(typeof t4 != "undefined"){
+    t4.remove();
+  }
+  if(typeof t5 != "undefined"){
+    t5.remove();
+  }
+  if(typeof t6 != "undefined"){
+    t6.remove();
+  }
+  if(typeof t11 != "undefined"){
+    t11.remove();
+  }
+  if(typeof t12 != "undefined"){
+    t12.remove();
+  }
+  if(typeof t13 != "undefined"){
+    t13.remove();
+  }
+  if(typeof t14 != "undefined"){
+    t14.remove();
+  }
+  if(typeof t15 != "undefined"){
+    t15.remove();
+  }
+  if(typeof t21 != "undefined"){
+    t21.remove();
+  }
+  if(typeof t22 != "undefined"){
+    t22.remove();
+  }
+  if(typeof t23 != "undefined"){
+    t23.remove();
+  }
+  if(typeof t24 != "undefined"){
+    t24.remove();
+  }
+  if(typeof t25 != "undefined"){
+    t25.remove();
+  }
+  if(typeof t31 != "undefined"){
+    t31.remove();
+  }
+  if(typeof t32 != "undefined"){
+    t32.remove();
+  }
+  if(typeof t33 != "undefined"){
+    t33.remove();
+  }
+  if(typeof t34 != "undefined"){
+    t34.remove();
+  }
+  if(typeof t35 != "undefined"){
+    t35.remove();
+  }
+  if(typeof t41 != "undefined"){
+    t41.remove();
+  }
+  if(typeof t42 != "undefined"){
+    t42.remove();
+  }
+  if(typeof t43 != "undefined"){
+    t43.remove();
+  }
+  if(typeof t44 != "undefined"){
+    t44.remove();
+  }
+  if(typeof t45 != "undefined"){
+    t45.remove();
+  }
+  if(typeof t51 != "undefined"){
+    t51.remove();
+  }
+  if(typeof t52 != "undefined"){
+    t52.remove();
+  }
+  if(typeof t53 != "undefined"){
+    t53.remove();
+  }
+  if(typeof t54 != "undefined"){
+    t54.remove();
+  }
+  if(typeof t55 != "undefined"){
+    t55.remove();
+  }
+  if(typeof t61 != "undefined"){
+    t61.remove();
+  }
+  if(typeof t62 != "undefined"){
+    t62.remove();
+  }
+  if(typeof t63 != "undefined"){
+    t63.remove();
+  }
+  if(typeof t64 != "undefined"){
+    t64.remove();
+  }
+  if(typeof t65 != "undefined"){
+    t65.remove();
+  }
+  if(typeof player1 != "undefined"){
+    player1.remove();
+  }
+  if(typeof player2 != "undefined"){
+    player2.remove();
+  }
+  if(typeof player3 != "undefined"){
+    player3.remove();
+  }
+   if(typeof player1Correct != "undefined"){
+    player1Correct.remove();
+  }
+  if(typeof player2Correct != "undefined"){
+    player2Correct.remove();
+  }
+  if(typeof player3Correct != "undefined"){
+    player3Correct.remove();
+  }
+  if(typeof player1Wrong != "undefined"){
+    player1Wrong.remove();
+  }
+  if(typeof player2Wrong != "undefined"){
+    player2Wrong.remove();
+  }
+  if(typeof player3Wrong != "undefined"){
+    player3Wrong.remove();
+  }
+  p1.name = name1A.value();
+  p2.name = name2A.value();
+  p3.name = name3A.value();
+  
   createCanvas(1920, 1080);
   background(0);
   
@@ -1634,15 +1933,23 @@ function openBoard1(){
   t65.style("font-size", fontSize);
   t65.style("background-color",col);
   
+  if(p1.name.length>5){
+    p1NameFontSize = "35px";
+  }
+  if(p2.name.length>5){
+    p2NameFontSize = "35px";
+  }
+  if(p3.name.length>5){
+    p3NameFontSize = "35px";
+  }
   
-  
-  player1 = createButton(p1.name);
+  player1 = createButton(p1.name+": "+p1.points);
   player1.style('color:col');
   player1.size((windowWidth-20)/3,gridSpacingy);
   player1.position(5,5);
   player1.style("font-family: myFont");
   player1.style('background-color', col);
-  player1.style('font-size', fontSize);
+  player1.style('font-size', p1NameFontSize);
   player1.style('color', unused)
   
   player1Correct = createButton("+");
@@ -1659,13 +1966,13 @@ function openBoard1(){
   player1Wrong.size(30,(player1.height-15)/2);
   player1Wrong.position((windowWidth/3)-35, 15+player1Correct.height);
   
-  player2 = createButton(p2.name);
+  player2 = createButton(p2.name+": "+p2.points);
   player2.style('color:col');
   player2.size((windowWidth-20)/3,gridSpacingy);
   player2.position(10+player1.width, 5);
   player2.style("font-family: myFont");
   player2.style('background-color', col);
-  player2.style('font-size', fontSize);
+  player2.style('font-size',p2NameFontSize);
   player2.style('color', unused)
   
   player2Correct = createButton("+");
@@ -1682,13 +1989,13 @@ function openBoard1(){
   player2Wrong.size(30,(player1.height-15)/2);
   player2Wrong.position((windowWidth/3)-30+player1.width, 15+player1Correct.height);
   
-  player3 = createButton(p3.name);
+  player3 = createButton(p3.name+": "+p3.points);
   player3.style('color:col');
   player3.size((windowWidth-20)/3,gridSpacingy);
   player3.position(15+(player1.width*2), 5);
   player3.style("font-family: myFont");
   player3.style('background-color', col);
-  player3.style('font-size', fontSize);
+  player3.style('font-size',p3NameFontSize);
   player3.style('color', unused)
   
   player3Correct = createButton("+");
@@ -1742,6 +2049,15 @@ function b1t11(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -1797,6 +2113,15 @@ function b1t12(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -1851,6 +2176,15 @@ function b1t13(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -1905,6 +2239,15 @@ function b1t14(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -1959,6 +2302,15 @@ function b1t15(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -2013,6 +2365,15 @@ function b1t21(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -2067,7 +2428,15 @@ function b1t22(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2121,7 +2490,15 @@ function b1t23(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2175,7 +2552,15 @@ function b1t24(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2229,7 +2614,15 @@ function b1t25(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2283,7 +2676,15 @@ function b1t31(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2337,7 +2738,15 @@ function b1t32(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2391,7 +2800,15 @@ function b1t33(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2445,7 +2862,15 @@ function b1t34(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2499,7 +2924,15 @@ function b1t35(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2553,7 +2986,15 @@ function b1t41(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2607,7 +3048,15 @@ function b1t42(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2661,7 +3110,15 @@ function b1t43(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2715,7 +3172,15 @@ function b1t44(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2769,7 +3234,15 @@ function b1t45(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2823,7 +3296,15 @@ function b1t51(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2877,7 +3358,15 @@ function b1t52(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2931,7 +3420,15 @@ function b1t53(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -2985,7 +3482,15 @@ function b1t54(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3039,7 +3544,15 @@ function b1t55(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3093,7 +3606,15 @@ function b1t61(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3147,7 +3668,15 @@ function b1t62(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3201,7 +3730,15 @@ function b1t63(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3255,7 +3792,15 @@ function b1t64(){
   t63.remove();
   t64.remove();
   t65.remove();
-  
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
@@ -3309,6 +3854,15 @@ function b1t65(){
   t63.remove();
   t64.remove();
   t65.remove();
+  player1.remove();
+  player2.remove();
+  player3.remove();
+  player1Correct.remove();
+  player2Correct.remove();
+  player3Correct.remove();
+  player1Wrong.remove();
+  player2Wrong.remove();
+  player3Wrong.remove();
   
   background(6, 12, 233);
   textSize(textFontSize);
@@ -3380,28 +3934,70 @@ function openBoard6(num){
 }
 function correct1(){
     p1.points = p1.points+value;
-    print(p1.points);
+    openBoard1();
   }
 function correct2(){
     p2.points = p2.points+value;
-    print(p2.points);
+    openBoard1();
   }
 function correct3(){
     p3.points = p3.points+value;
-    print(p3.points);
+    openBoard1();
   }
 function incorrect1(){
     p1.points = p1.points-value;
-    print(p1.points);
+    openBoard1();
   }
 function incorrect2(){
     p2.points = p2.points-value;
-    print(p2.points);
+    openBoard1();
   }
 function incorrect3(){
     p3.points = p3.points-value;
-    print(p3.points);
+    openBoard1();
   }
+function getPlayers(){
+  btn1.remove();
+  ebtn1.remove();
+  btn2.remove();
+  ebtn2.remove();
+  btn3.remove();
+  ebtn3.remove();
+  btn4.remove();
+  ebtn4.remove();
+  btn5.remove();
+  ebtn5.remove();
+  btn6.remove();
+  ebtn6.remove();
+  
+  textAlign(CENTER);
+  background(6, 12, 233);
+  
+  fill(255);
+  textSize(50);
+  title = text(board1[0], windowWidth/2, 50);
+  textSize(25);
+  name = text("Player 1:", 100, 100);
+  name1A = createInput();
+  name1A.position(200, 83);
+  
+  name = text("Player 2:", 100, 200);
+  name2A = createInput();
+  name2A.position(200, 183);
+  
+  name = text("Player 3:", 100, 300);
+  name3A = createInput();
+  name3A.position(200, 283);
+  
+  nbtn = createButton("Next");
+  nbtn.mouseClicked(openBoard1);
+  nbtn.size(100, 40);
+  nbtn.position(windowWidth-105, windowHeight-45);
+  nbtn.style("font-family", myFont);
+  nbtn.style("font-size", "20px");
+  
+  
+}
 
 class Board{
   constructor(name, questions){
