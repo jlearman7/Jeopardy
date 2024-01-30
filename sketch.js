@@ -8,37 +8,6 @@ let textFontSize = 50;
 let unused = '#FFCC00';
 let used = '#7e8185';
 
-let tCol = unused;
-let t11Col = unused;
-let t12Col = unused;
-let t13Col = unused;
-let t14Col = unused;
-let t15Col = unused;
-let t21Col = unused;
-let t22Col = unused;
-let t23Col = unused;
-let t24Col = unused;
-let t25Col = unused;
-let t31Col = unused;
-let t32Col = unused;
-let t33Col = unused;
-let t34Col = unused;
-let t35Col = unused;
-let t41Col = unused;
-let t42Col = unused;
-let t43Col = unused;
-let t44Col = unused;
-let t45Col = unused;
-let t51Col = unused;
-let t52Col = unused;
-let t53Col = unused;
-let t54Col = unused;
-let t55Col = unused;
-let t61Col = unused;
-let t62Col = unused;
-let t63Col = unused;
-let t64Col = unused;
-let t65Col = unused;
 
 let fwriter;
 var myFont, board1, board2, board3, board4, board5, board6;
@@ -51,6 +20,9 @@ function preload(){
   board5 = loadStrings("Board5.txt");
   board6 = loadStrings("Board6.txt");
   
+  p1 = new player("player 1");
+  p2 = new player("player 2");
+  p3 = new player("player 3");
 }
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
@@ -72,9 +44,7 @@ function windowResized() {
 }
 
 function setup() {
-  if(getItem('lastMethod') == 'nameMenu'){
-    nameMenu();
-  }
+  
   storeItem('tCol',unused);
   storeItem('t11Col',unused);
   storeItem('t12Col',unused);
@@ -114,9 +84,7 @@ function setup() {
   textFont(myFont);
   writer1 = createWriter('Board1.txt');
   
-  p1 = new player("player 1");
-  p2 = new player("player 2");
-  p3 = new player("player 3");
+  
   
   
   
@@ -128,8 +96,16 @@ function setup() {
   b6 = new Board(board6[0], [board6[1], board6[2], board6[3], board6[4], board6[5], board6[6], board6[7], board6[8], board6[9], board6[10], board6[11], board6[12], board6[13], board6[14], board6[15], board6[16], board6[17], board6[18], board6[19], board6[20], board6[21], board6[22], board6[23], board6[24], board6[25], board6[26], board6[27], board6[28], board6[29], board6[30], board6[31], board6[32], board6[33], board6[34], board6[35], board6[36], board6[37], board6[38], board6[39], board6[40], board6[41], board6[42], board6[43], board6[44], board6[45], board6[46], board6[47], board6[48], board6[49], board6[50], board6[51], board6[52], board6[53], board6[54], board6[55], board6[56], board6[57], board6[58], board6[59], board6[60], board6[61], board6[62], board6[63], board6[64], board6[65], board6[66], board6[67]]);
   
   windowResized();
+  if(getItem('lastMethod') == 'nameMenu'){
+    nameMenu();
+  }
+  else if(getItem('lastMethod') == 'openBoard1'){
+    openBoard1();
+  }
+  else{
+    mainMenu();
+  }
   
-  mainMenu();
   
   
 }
@@ -826,7 +802,7 @@ function openBoard1(){
   t1 = createButton(b1.questions[0]);
   t1.size(gridSpacingx, gridSpacingy);
   t1.position(5,(1*gridSpacingy)+(2*5));
-  t1.style('color', tCol);
+  t1.style('color', getItem('tCol'));
   t1.style('font-family: myFont');
   t1.style("font-family", myFont);
   t1.style("font-size", fontSize);
@@ -835,7 +811,7 @@ function openBoard1(){
   t2 = createButton(b1.questions[11]);
   t2.size(gridSpacingx, gridSpacingy);
   t2.position(gridSpacingx+(2*5), (1*gridSpacingy)+(2*5));
-  t2.style('color', tCol);
+  t2.style('color', getItem('tCol'));
   t2.style('font-family: myFont');
   t2.style("font-size", fontSize);
   t2.style("background-color",col);
@@ -843,7 +819,7 @@ function openBoard1(){
   t3 = createButton(b1.questions[22]);
   t3.size(gridSpacingx, gridSpacingy);
   t3.position((2*gridSpacingx)+(3*5), (1*gridSpacingy)+(2*5));
-  t3.style('color', tCol);
+  t3.style('color', getItem('tCol'));
   t3.style('font-family: myFont');
   t3.style("font-family", myFont);
   t3.style("font-size", fontSize);
@@ -852,7 +828,7 @@ function openBoard1(){
   t4 = createButton(b1.questions[33]);
   t4.size(gridSpacingx, gridSpacingy);
   t4.position((3*gridSpacingx)+(4*5), (1*gridSpacingy)+(2*5));
-  t4.style('color', tCol);
+  t4.style('color', getItem('tCol'));
   t4.style('font-family: myFont');
   t4.style("font-family", myFont);
   t4.style("font-size", fontSize);
@@ -861,7 +837,7 @@ function openBoard1(){
   t5 = createButton(b1.questions[44]);
   t5.size(gridSpacingx, gridSpacingy);
   t5.position((4*gridSpacingx)+(5*5), (1*gridSpacingy)+(2*5));
-  t5.style('color', tCol);
+  t5.style('color', getItem('tCol'));
   t5.style('font-family: myFont');
   t5.style("font-family", myFont);
   t5.style("font-size", fontSize);
@@ -870,7 +846,7 @@ function openBoard1(){
   t6 = createButton(b1.questions[55]);
   t6.size(gridSpacingx, gridSpacingy);
   t6.position((5*gridSpacingx)+(6*5), (1*gridSpacingy)+(2*5));
-  t6.style('color', tCol);
+  t6.style('color', getItem('tCol'));
   t6.style('font-family: myFont');
   t6.style("font-family", myFont);
   t6.style("font-size", fontSize);
