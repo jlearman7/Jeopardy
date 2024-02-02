@@ -66,7 +66,7 @@ function windowResized() {
 }
 
 function setup() {
-  noCursor();
+  
   storeItem('tCol',unused);
   storeItem('t11Col',unused);
   storeItem('t12Col',unused);
@@ -159,6 +159,7 @@ function output(){
 
 function mainMenu(){
   background(6, 12, 233);
+  cursor();
   reset();
   
   btn1 = createButton(board1[0]);
@@ -811,7 +812,7 @@ function players(){
 }
 function openBoard1(){
   reset();
-  
+  noCursor();
   storeItem('lastMethod',"openBoard1");
   
   if(typeof name1A !== 'undefined'){
