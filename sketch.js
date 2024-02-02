@@ -7,6 +7,7 @@ let fontSize = '100px';
 let textFontSize = 50;
 let unused = '#FFCC00';
 let used = '#7e8185';
+let topicFont = '0px';
 
 
 let fwriter;
@@ -25,6 +26,7 @@ function preload(){
   p3 = new player("player 3");
 }
 function windowResized() {
+  print(windowWidth)
   resizeCanvas(windowWidth, windowHeight);
   background(6,12,233);
   gridSpacingx = (windowWidth -35)/6;
@@ -32,19 +34,39 @@ function windowResized() {
   if(windowWidth<700){
     fontSize = '35px';
   }
-  else if(windowWidth<1000){
-    fontSize = '50px'
+  else if(windowWidth<850){
+    fontSize = '45px'
   }
-  else if(windowWidth<1800){
+  else if(windowWidth<1000){
     fontSize = '65px'  
   }
+  else if(windowWidth<1250){
+    fontSize='80px';
+  }
+  else if(windowWidth<1500){
+    fontSize='100px'
+  }
+  else if(windowWidth<1750){
+    fontSize='100px'
+  }
+  
+  if(windowWidth<700&&b1.questions[0].length<15){
+    topicFont = '35px'
+  }
+  else if(windowWidth>699&&windowWidth<850 && b1.questions[0].lenth<25){
+    topicFont = '40px'
+  }
+  else if(windowWidth>849 && windowWidth<1000 && b1.questions[0].length<15){
+    topicFont = '75px'
+  }
+  
   
   
   
 }
 
 function setup() {
-  
+  noCursor();
   storeItem('tCol',unused);
   storeItem('t11Col',unused);
   storeItem('t12Col',unused);
@@ -88,12 +110,12 @@ function setup() {
   
   
   
-  b1 = new Board(board1[0], [board1[1], board1[2], board1[3], board1[4], board1[5], board1[6], board1[7], board1[8], board1[9], board1[10], board1[11], board1[12], board1[13], board1[14], board1[15], board1[16], board1[17], board1[18], board1[19], board1[20], board1[21], board1[22], board1[23], board1[24], board1[25], board1[26], board1[27], board1[28], board1[29], board1[30], board1[31], board1[32], board1[33], board1[34], board1[35], board1[36], board1[37], board1[38], board1[39], board1[40], board1[41], board1[42], board1[43], board1[44], board1[45], board1[46], board1[47], board1[48], board1[49], board1[50], board1[51], board1[52], board1[53], board1[54], board1[55], board1[56], board1[57], board1[58], board1[59], board1[60], board1[61], board1[62], board1[63], board1[64], board1[65], board1[66], board1[67]]);
-  b2 = new Board(board2[0], [board2[1], board2[2], board2[3], board2[4], board2[5], board2[6], board2[7], board2[8], board2[9], board2[10], board2[11], board2[12], board2[13], board2[14], board2[15], board2[16], board2[17], board2[18], board2[19], board2[20], board2[21], board2[22], board2[23], board2[24], board2[25], board2[26], board2[27], board2[28], board2[29], board2[30], board2[31], board2[32], board2[33], board2[34], board2[35], board2[36], board2[37], board2[38], board2[39], board2[40], board2[41], board2[42], board2[43], board2[44], board2[45], board2[46], board2[47], board2[48], board2[49], board2[50], board2[51], board2[52], board2[53], board2[54], board2[55], board2[56], board2[57], board2[58], board2[59], board2[60], board2[61], board2[62], board2[63], board2[64], board2[65], board2[66], board2[67]]);
-  b3 = new Board(board3[0], [board3[1], board3[2], board3[3], board3[4], board3[5], board3[6], board3[7], board3[8], board3[9], board3[10], board3[11], board3[12], board3[13], board3[14], board3[15], board3[16], board3[17], board3[18], board3[19], board3[20], board3[21], board3[22], board3[23], board3[24], board3[25], board3[26], board3[27], board3[28], board3[29], board3[30], board3[31], board3[32], board3[33], board3[34], board3[35], board3[36], board3[37], board3[38], board3[39], board3[40], board3[41], board3[42], board3[43], board3[44], board3[45], board3[46], board3[47], board3[48], board3[49], board3[50], board3[51], board3[52], board3[53], board3[54], board3[55], board3[56], board3[57], board3[58], board3[59], board3[60], board3[61], board3[62], board3[63], board3[64], board3[65], board3[66], board3[67]]);
-  b4 = new Board(board4[0], [board4[1], board4[2], board4[3], board4[4], board4[5], board4[6], board4[7], board4[8], board4[9], board4[10], board4[11], board4[12], board4[13], board4[14], board4[15], board4[16], board4[17], board4[18], board4[19], board4[20], board4[21], board4[22], board4[23], board4[24], board4[25], board4[26], board4[27], board4[28], board4[29], board4[30], board4[31], board4[32], board4[33], board4[34], board4[35], board4[36], board4[37], board4[38], board4[39], board4[40], board4[41], board4[42], board4[43], board4[44], board4[45], board4[46], board4[47], board4[48], board4[49], board4[50], board4[51], board4[52], board4[53], board4[54], board4[55], board4[56], board4[57], board4[58], board4[59], board4[60], board4[61], board4[62], board4[63], board4[64], board4[65], board4[66], board4[67]]);
-  b5 = new Board(board5[0], [board5[1], board5[2], board5[3], board5[4], board5[5], board5[6], board5[7], board5[8], board5[9], board5[10], board5[11], board5[12], board5[13], board5[14], board5[15], board5[16], board5[17], board5[18], board5[19], board5[20], board5[21], board5[22], board5[23], board5[24], board5[25], board5[26], board5[27], board5[28], board5[29], board5[30], board5[31], board5[32], board5[33], board5[34], board5[35], board5[36], board5[37], board5[38], board5[39], board5[40], board5[41], board5[42], board5[43], board5[44], board5[45], board5[46], board5[47], board5[48], board5[49], board5[50], board5[51], board5[52], board5[53], board5[54], board5[55], board5[56], board5[57], board5[58], board5[59], board5[60], board5[61], board5[62], board5[63], board5[64], board5[65], board5[66], board5[67]]);
-  b6 = new Board(board6[0], [board6[1], board6[2], board6[3], board6[4], board6[5], board6[6], board6[7], board6[8], board6[9], board6[10], board6[11], board6[12], board6[13], board6[14], board6[15], board6[16], board6[17], board6[18], board6[19], board6[20], board6[21], board6[22], board6[23], board6[24], board6[25], board6[26], board6[27], board6[28], board6[29], board6[30], board6[31], board6[32], board6[33], board6[34], board6[35], board6[36], board6[37], board6[38], board6[39], board6[40], board6[41], board6[42], board6[43], board6[44], board6[45], board6[46], board6[47], board6[48], board6[49], board6[50], board6[51], board6[52], board6[53], board6[54], board6[55], board6[56], board6[57], board6[58], board6[59], board6[60], board6[61], board6[62], board6[63], board6[64], board6[65], board6[66], board6[67]]);
+  b1 = new Board(board1[0], [board1[1], board1[2], board1[3], board1[4], board1[5], board1[6], board1[7], board1[8], board1[9], board1[10], board1[11], board1[12], board1[13], board1[14], board1[15], board1[16], board1[17], board1[18], board1[19], board1[20], board1[21], board1[22], board1[23], board1[24], board1[25], board1[26], board1[27], board1[28], board1[29], board1[30], board1[31], board1[32], board1[33], board1[34], board1[35], board1[36], board1[37], board1[38], board1[39], board1[40], board1[41], board1[42], board1[43], board1[44], board1[45], board1[46], board1[47], board1[48], board1[49], board1[50], board1[51], board1[52], board1[53], board1[54], board1[55], board1[56], board1[57], board1[58], board1[59], board1[60], board1[61], board1[62], board1[63], board1[64], board1[65], board1[66]],board1[67]);
+  b2 = new Board(board2[0], [board2[1], board2[2], board2[3], board2[4], board2[5], board2[6], board2[7], board2[8], board2[9], board2[10], board2[11], board2[12], board2[13], board2[14], board2[15], board2[16], board2[17], board2[18], board2[19], board2[20], board2[21], board2[22], board2[23], board2[24], board2[25], board2[26], board2[27], board2[28], board2[29], board2[30], board2[31], board2[32], board2[33], board2[34], board2[35], board2[36], board2[37], board2[38], board2[39], board2[40], board2[41], board2[42], board2[43], board2[44], board2[45], board2[46], board2[47], board2[48], board2[49], board2[50], board2[51], board2[52], board2[53], board2[54], board2[55], board2[56], board2[57], board2[58], board2[59], board2[60], board2[61], board2[62], board2[63], board2[64], board2[65], board2[66]],board2[67]);
+  b3 = new Board(board3[0], [board3[1], board3[2], board3[3], board3[4], board3[5], board3[6], board3[7], board3[8], board3[9], board3[10], board3[11], board3[12], board3[13], board3[14], board3[15], board3[16], board3[17], board3[18], board3[19], board3[20], board3[21], board3[22], board3[23], board3[24], board3[25], board3[26], board3[27], board3[28], board3[29], board3[30], board3[31], board3[32], board3[33], board3[34], board3[35], board3[36], board3[37], board3[38], board3[39], board3[40], board3[41], board3[42], board3[43], board3[44], board3[45], board3[46], board3[47], board3[48], board3[49], board3[50], board3[51], board3[52], board3[53], board3[54], board3[55], board3[56], board3[57], board3[58], board3[59], board3[60], board3[61], board3[62], board3[63], board3[64], board3[65], board3[66]],board3[67]);
+  b4 = new Board(board4[0], [board4[1], board4[2], board4[3], board4[4], board4[5], board4[6], board4[7], board4[8], board4[9], board4[10], board4[11], board4[12], board4[13], board4[14], board4[15], board4[16], board4[17], board4[18], board4[19], board4[20], board4[21], board4[22], board4[23], board4[24], board4[25], board4[26], board4[27], board4[28], board4[29], board4[30], board4[31], board4[32], board4[33], board4[34], board4[35], board4[36], board4[37], board4[38], board4[39], board4[40], board4[41], board4[42], board4[43], board4[44], board4[45], board4[46], board4[47], board4[48], board4[49], board4[50], board4[51], board4[52], board4[53], board4[54], board4[55], board4[56], board4[57], board4[58], board4[59], board4[60], board4[61], board4[62], board4[63], board4[64], board4[65], board4[66]],board4[67]);
+  b5 = new Board(board5[0], [board5[1], board5[2], board5[3], board5[4], board5[5], board5[6], board5[7], board5[8], board5[9], board5[10], board5[11], board5[12], board5[13], board5[14], board5[15], board5[16], board5[17], board5[18], board5[19], board5[20], board5[21], board5[22], board5[23], board5[24], board5[25], board5[26], board5[27], board5[28], board5[29], board5[30], board5[31], board5[32], board5[33], board5[34], board5[35], board5[36], board5[37], board5[38], board5[39], board5[40], board5[41], board5[42], board5[43], board5[44], board5[45], board5[46], board5[47], board5[48], board5[49], board5[50], board5[51], board5[52], board5[53], board5[54], board5[55], board5[56], board5[57], board5[58], board5[59], board5[60], board5[61], board5[62], board5[63], board5[64], board5[65], board5[66]],board5[67]);
+  b6 = new Board(board6[0], [board6[1], board6[2], board6[3], board6[4], board6[5], board6[6], board6[7], board6[8], board6[9], board6[10], board6[11], board6[12], board6[13], board6[14], board6[15], board6[16], board6[17], board6[18], board6[19], board6[20], board6[21], board6[22], board6[23], board6[24], board6[25], board6[26], board6[27], board6[28], board6[29], board6[30], board6[31], board6[32], board6[33], board6[34], board6[35], board6[36], board6[37], board6[38], board6[39], board6[40], board6[41], board6[42], board6[43], board6[44], board6[45], board6[46], board6[47], board6[48], board6[49], board6[50], board6[51], board6[52], board6[53], board6[54], board6[55], board6[56], board6[57], board6[58], board6[59], board6[60], board6[61], board6[62], board6[63], board6[64], board6[65], board6[66]],board6[67]);
   
   windowResized();
   if(getItem('lastMethod') == 'nameMenu'){
@@ -119,6 +141,13 @@ function draw() {
   else if(keyIsPressed==true && keyCode === ESCAPE){
     mainMenu();
   }
+  else if(keyIsPressed==true && keyCode === DELETE){
+    if(getItem('lastMethod')=="openBoard1"&&checkDone(1))
+        B1Final();
+  }
+  
+  
+  
 }
 
 function output(){
@@ -802,55 +831,61 @@ function openBoard1(){
   t1 = createButton(b1.questions[0]);
   t1.size(gridSpacingx, gridSpacingy);
   t1.position(5,(1*gridSpacingy)+(2*5));
-  t1.style('color', getItem('tCol'));
+  t1.style('color', "#fff");
   t1.style('font-family: myFont');
   t1.style("font-family", myFont);
   t1.style("font-size", fontSize);
   t1.style("background-color",col);
+  t1.style("border-color",col);
   
   t2 = createButton(b1.questions[11]);
   t2.size(gridSpacingx, gridSpacingy);
   t2.position(gridSpacingx+(2*5), (1*gridSpacingy)+(2*5));
-  t2.style('color', getItem('tCol'));
+  t2.style('color', "#fff");
   t2.style('font-family: myFont');
   t2.style("font-size", fontSize);
   t2.style("background-color",col);
+  t2.style("border-color",col);
   
   t3 = createButton(b1.questions[22]);
   t3.size(gridSpacingx, gridSpacingy);
   t3.position((2*gridSpacingx)+(3*5), (1*gridSpacingy)+(2*5));
-  t3.style('color', getItem('tCol'));
+  t3.style('color', "#fff");
   t3.style('font-family: myFont');
   t3.style("font-family", myFont);
   t3.style("font-size", fontSize);
   t3.style("background-color",col);
+  t3.style("border-color",col);
   
   t4 = createButton(b1.questions[33]);
   t4.size(gridSpacingx, gridSpacingy);
   t4.position((3*gridSpacingx)+(4*5), (1*gridSpacingy)+(2*5));
-  t4.style('color', getItem('tCol'));
+  t4.style('color', "#fff");
   t4.style('font-family: myFont');
   t4.style("font-family", myFont);
   t4.style("font-size", fontSize);
   t4.style("background-color",col);
+  t4.style("border-color",col);
   
   t5 = createButton(b1.questions[44]);
   t5.size(gridSpacingx, gridSpacingy);
   t5.position((4*gridSpacingx)+(5*5), (1*gridSpacingy)+(2*5));
-  t5.style('color', getItem('tCol'));
+  t5.style('color', "#fff");
   t5.style('font-family: myFont');
   t5.style("font-family", myFont);
   t5.style("font-size", fontSize);
   t5.style("background-color",col);
+  t5.style("border-color",col);
   
   t6 = createButton(b1.questions[55]);
   t6.size(gridSpacingx, gridSpacingy);
   t6.position((5*gridSpacingx)+(6*5), (1*gridSpacingy)+(2*5));
-  t6.style('color', getItem('tCol'));
+  t6.style('color', "#fff");
   t6.style('font-family: myFont');
   t6.style("font-family", myFont);
   t6.style("font-size", fontSize);
   t6.style("background-color",col);
+  t6.style("border-color",col);
   
   t11 = createButton("$100");
   t11.mouseClicked(b1t11);
@@ -860,6 +895,7 @@ function openBoard1(){
   t11.style('font-family: myFont');
   t11.style("font-size", fontSize);
   t11.style("background-color", col);
+  t11.style("border-color",col);
   
   t12 = createButton("$200");
   t12.mouseClicked(b1t12);
@@ -870,6 +906,7 @@ function openBoard1(){
   t12.style("font-family", myFont);
   t12.style("font-size", fontSize);
   t12.style("background-color",col);
+  t12.style("border-color",col);
   
   t13 = createButton("$300");
   t13.mouseClicked(b1t13);
@@ -880,6 +917,7 @@ function openBoard1(){
   t13.style("font-family", myFont);
   t13.style("font-size", fontSize);
   t13.style("background-color",col);
+  t13.style("border-color",col);
   
   t14 = createButton("$400");
   t14.mouseClicked(b1t14);
@@ -890,6 +928,7 @@ function openBoard1(){
   t14.style("font-family", myFont);
   t14.style("font-size", fontSize);
   t14.style("background-color",col);
+  t14.style("border-color",col);
   
   t15 = createButton("$500");
   t15.mouseClicked(b1t15);
@@ -900,6 +939,7 @@ function openBoard1(){
   t15.style("font-family", myFont);
   t15.style("font-size", fontSize);
   t15.style("background-color",col);
+  t15.style("border-color",col);
   
   t21 = createButton("$100");
   t21.mouseClicked(b1t21);
@@ -909,6 +949,7 @@ function openBoard1(){
   t21.style('font-family: myFont');
   t21.style("font-size", fontSize);
   t21.style("background-color", col);
+  t21.style("border-color",col);
   
   t22 = createButton("$200");
   t22.mouseClicked(b1t22);
@@ -919,6 +960,7 @@ function openBoard1(){
   t22.style("font-family", myFont);
   t22.style("font-size", fontSize);
   t22.style("background-color",col);
+  t22.style("border-color",col);
   
   t23 = createButton("$300");
   t23.mouseClicked(b1t23);
@@ -929,6 +971,7 @@ function openBoard1(){
   t23.style("font-family", myFont);
   t23.style("font-size", fontSize);
   t23.style("background-color",col);
+  t23.style("border-color",col);
   
   t24 = createButton("$400");
   t24.mouseClicked(b1t24);
@@ -939,6 +982,7 @@ function openBoard1(){
   t24.style("font-family", myFont);
   t24.style("font-size", fontSize);
   t24.style("background-color",col);
+  t24.style("border-color",col);
   
   t25 = createButton("$500");
   t25.mouseClicked(b1t25);
@@ -949,6 +993,7 @@ function openBoard1(){
   t25.style("font-family", myFont);
   t25.style("font-size", fontSize);
   t25.style("background-color",col);
+  t25.style("border-color",col);
   
   t31 = createButton("$100");
   t31.mouseClicked(b1t31);
@@ -958,6 +1003,7 @@ function openBoard1(){
   t31.style('font-family: myFont');
   t31.style("font-size", fontSize);
   t31.style("background-color", col);
+  t31.style("border-color",col);
   
   t32 = createButton("$200");
   t32.mouseClicked(b1t32);
@@ -968,6 +1014,7 @@ function openBoard1(){
   t32.style("font-family", myFont);
   t32.style("font-size", fontSize);
   t32.style("background-color",col);
+  t32.style("border-color",col);
 
   t33 = createButton("$300");
   t33.mouseClicked(b1t33);
@@ -978,6 +1025,7 @@ function openBoard1(){
   t33.style("font-family", myFont);
   t33.style("font-size", fontSize);
   t33.style("background-color",col);
+  t33.style("border-color",col);
   
   t34 = createButton("$400");
   t34.mouseClicked(b1t34);
@@ -988,6 +1036,7 @@ function openBoard1(){
   t34.style("font-family", myFont);
   t34.style("font-size", fontSize);
   t34.style("background-color",col);
+  t34.style("border-color",col);
   
   t35 = createButton("$500");
   t35.mouseClicked(b1t35);
@@ -998,6 +1047,7 @@ function openBoard1(){
   t35.style("font-family", myFont);
   t35.style("font-size", fontSize);
   t35.style("background-color",col);
+  t35.style("border-color",col);
   
   t41 = createButton("$100");
   t41.mouseClicked(b1t41);
@@ -1007,6 +1057,7 @@ function openBoard1(){
   t41.style('font-family: myFont');
   t41.style("font-size", fontSize);
   t41.style("background-color", col);
+  t41.style("border-color",col);
   
   t42 = createButton("$200");
   t42.mouseClicked(b1t42);
@@ -1017,6 +1068,7 @@ function openBoard1(){
   t42.style("font-family", myFont);
   t42.style("font-size", fontSize);
   t42.style("background-color",col);
+  t42.style("border-color",col);
   
   t43 = createButton("$300");
   t43.mouseClicked(b1t43);
@@ -1027,6 +1079,7 @@ function openBoard1(){
   t43.style("font-family", myFont);
   t43.style("font-size", fontSize);
   t43.style("background-color",col);
+  t43.style("border-color",col);
   
   t44 = createButton("$400");
   t44.mouseClicked(b1t44);
@@ -1037,6 +1090,7 @@ function openBoard1(){
   t44.style("font-family", myFont);
   t44.style("font-size", fontSize);
   t44.style("background-color",col);
+  t44.style("border-color",col);
   
   t45 = createButton("$500");
   t45.mouseClicked(b1t45);
@@ -1047,6 +1101,7 @@ function openBoard1(){
   t45.style("font-family", myFont);
   t45.style("font-size", fontSize);
   t45.style("background-color",col);
+  t45.style("border-color",col);
   
   t51 = createButton("$100");
   t51.mouseClicked(b1t51);
@@ -1056,6 +1111,7 @@ function openBoard1(){
   t51.style('font-family: myFont');
   t51.style("font-size", fontSize);
   t51.style("background-color", col);
+  t51.style("border-color",col);
   
   t52 = createButton("$200");
   t52.mouseClicked(b1t52);
@@ -1066,6 +1122,7 @@ function openBoard1(){
   t52.style("font-family", myFont);
   t52.style("font-size", fontSize);
   t52.style("background-color",col);
+  t52.style("border-color",col);
   
   t53 = createButton("$300");
   t53.mouseClicked(b1t53);
@@ -1076,6 +1133,7 @@ function openBoard1(){
   t53.style("font-family", myFont);
   t53.style("font-size", fontSize);
   t53.style("background-color",col);
+  t53.style("border-color",col);
   
   t54 = createButton("$400");
   t54.mouseClicked(b1t54);
@@ -1086,6 +1144,7 @@ function openBoard1(){
   t54.style("font-family", myFont);
   t54.style("font-size", fontSize);
   t54.style("background-color",col);
+  t54.style("border-color",col);
   
   t55 = createButton("$500");
   t55.mouseClicked(b1t55);
@@ -1096,6 +1155,7 @@ function openBoard1(){
   t55.style("font-family", myFont);
   t55.style("font-size", fontSize);
   t55.style("background-color",col);
+  t55.style("border-color",col);
 
   t61 = createButton("$100");
   t61.mouseClicked(b1t61);
@@ -1105,6 +1165,7 @@ function openBoard1(){
   t61.style('font-family: myFont');
   t61.style("font-size", fontSize);
   t61.style("background-color", col);
+  t61.style("border-color",col);
   
   t62 = createButton("$200");
   t62.mouseClicked(b1t62);
@@ -1115,6 +1176,7 @@ function openBoard1(){
   t62.style("font-family", myFont);
   t62.style("font-size", fontSize);
   t62.style("background-color",col);
+  t62.style("border-color",col);
 
   t63 = createButton("$300");
   t63.mouseClicked(b1t63);
@@ -1125,6 +1187,7 @@ function openBoard1(){
   t63.style("font-family", myFont);
   t63.style("font-size", fontSize);
   t63.style("background-color",col);
+  t63.style("border-color",col);
 
   t64 = createButton("$400");
   t64.mouseClicked(b1t64);
@@ -1135,6 +1198,7 @@ function openBoard1(){
   t64.style("font-family", myFont);
   t64.style("font-size", fontSize);
   t64.style("background-color",col);
+  t64.style("border-color",col);
 
   t65 = createButton("$500");
   t65.mouseClicked(b1t65);
@@ -1145,6 +1209,7 @@ function openBoard1(){
   t65.style("font-family", myFont);
   t65.style("font-size", fontSize);
   t65.style("background-color",col);
+  t65.style("border-color",col);
   
   if(p1.name.length>5){
     p1NameFontSize = "35px";
@@ -1163,7 +1228,8 @@ function openBoard1(){
   player1.style("font-family: myFont");
   player1.style('background-color', col);
   player1.style('font-size', p1NameFontSize);
-  player1.style('color', unused)
+  player1.style('color', "#fff");
+  player1.style("border-color",col);
   
   player1Correct = createButton("+");
   player1Correct.mouseClicked(correct1);
@@ -1171,6 +1237,7 @@ function openBoard1(){
   player1Correct.style('font-family: myFont');
   player1Correct.size(30,(player1.height-15)/2);
   player1Correct.position((windowWidth/3)-35, 10);
+  
   
   player1Wrong = createButton("-");
   player1Wrong.mouseClicked(incorrect1);
@@ -1186,7 +1253,8 @@ function openBoard1(){
   player2.style("font-family: myFont");
   player2.style('background-color', col);
   player2.style('font-size',p2NameFontSize);
-  player2.style('color', unused)
+  player2.style('color', "#fff");
+  player2.style("border-color",col);
   
   player2Correct = createButton("+");
   player2Correct.mouseClicked(correct2);
@@ -1209,7 +1277,8 @@ function openBoard1(){
   player3.style("font-family: myFont");
   player3.style('background-color', col);
   player3.style('font-size',p3NameFontSize);
-  player3.style('color', unused)
+  player3.style('color', "#fff");
+  player3.style("border-color",col);
   
   player3Correct = createButton("+");
   player3Correct.mouseClicked(correct3);
@@ -1893,11 +1962,60 @@ function getPlayers(){
   
   
 }
+function B1Final(){
+  reset();
+  background(6, 12, 233);
+  textSize(textFontSize);
+  fill('#FFCC00');
+  textAlign(CENTER);
+  question = text(b1.final, windowWidth/2, windowHeight/2);
+  
+  player1 = createButton(p1.name+": "+p1.points);
+  player1.style('color:col');
+  player1.size((windowWidth-20)/3,gridSpacingy);
+  player1.position(5,5);
+  player1.style("font-family: myFont");
+  player1.style('background-color', "#fff");
+  player1.style('font-size', p1NameFontSize);
+  player1.style('color','#000' );
+  player1.style("border-color","#000");
+  
+  player2 = createButton(p2.name+": "+p2.points);
+  player2.style('color:col');
+  player2.size((windowWidth-20)/3,gridSpacingy);
+  player2.position(10+player1.width, 5);
+  player2.style("font-family: myFont");
+  player2.style('background-color', "#fff");
+  player2.style('font-size',p2NameFontSize);
+  player2.style('color', "#000" );
+  player2.style("border-color","#000");
+  
+  player3 = createButton(p3.name+": "+p3.points);
+  player3.style('color:col');
+  player3.size((windowWidth-20)/3,gridSpacingy);
+  player3.position(15+(player1.width*2), 5);
+  player3.style("font-family: myFont");
+  player3.style('background-color', "#fff");
+  player3.style('font-size',p3NameFontSize);
+  player3.style('color',"#000" );
+  player3.style("border-color","#000");
+  
+  storeItem('lastMethod',"B1Final"); 
+  value = 300;
+  
+}
+function checkDone(boardNum){
+  if(boardNum == 1 && getItem('t11Col') == used&& getItem('t12Col') == used&& getItem('t13Col') == used&& getItem('t14Col') == used&& getItem('t15Col') == used&& getItem('t61Col') == used&& getItem('t62Col') == used&& getItem('t63Col') == used&& getItem('t64Col') == used&& getItem('t65Col') == used&& getItem('t21Col') == used&& getItem('t22Col') == used&& getItem('t23Col') == used&& getItem('t24Col') == used&& getItem('t25Col') == used&& getItem('t31Col') == used&& getItem('t32Col') == used&& getItem('t33Col') == used&& getItem('t34Col') == used&& getItem('t35Col') == used&& getItem('t41Col') == used&& getItem('t42Col') == used&& getItem('t43Col') == used&& getItem('t44Col') == used&& getItem('t45Col') == used&& getItem('t51Col') == used&& getItem('t52Col') == used&& getItem('t53Col') == used&& getItem('t54Col') == used&& getItem('t55Col') == used){
+    print("yay");
+    return true;
+  }
+}
 
 class Board{
-  constructor(name, questions){
+  constructor(name, questions, final){
     this.name = name;
     this.questions = questions
+    this.final = final
     
   }
   
