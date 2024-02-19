@@ -4,6 +4,12 @@ p2NameFontSize = "50px";
 p3NameFontSize = "50px"
 let value = 0;
 let fontSize = '100px';
+let t1FontSize = '20px';
+let t2FontSize = '20px';
+let t3FontSize = '20px';
+let t4FontSize = '20px';
+let t5FontSize = '20px';
+let t6FontSize = '20px';
 let textFontSize = 50;
 let unused = '#FFCC00';
 let used = '#7e8185';
@@ -830,61 +836,116 @@ function openBoard1(){
   background(0);
   
   t1 = createButton(b1.questions[0]);
+  if(b1.questions[0].length <10){
+    t1FontSize = '40px'
+  }
+  else if(b1.questions[0].length <35){
+    t1FontSize = '25px'
+  }
+  else if(b1.questions[0].length<55){
+    t1FontSize = '20px'
+  }
   t1.size(gridSpacingx, gridSpacingy);
   t1.position(5,(1*gridSpacingy)+(2*5));
   t1.style('color', "#fff");
   t1.style('font-family: myFont');
   t1.style("font-family", myFont);
-  t1.style("font-size", fontSize);
+  t1.style("font-size", t1FontSize);
   t1.style("background-color",col);
   t1.style("border-color",col);
   
+  
   t2 = createButton(b1.questions[11]);
+   if(b1.questions[11].length <10){
+    t2FontSize = '40px'
+  }
+  else if(b1.questions[11].length <35){
+    t2FontSize = '25px'
+  }
+  else if(b1.questions[11].length<55){
+    t2FontSize = '20px'
+  }
   t2.size(gridSpacingx, gridSpacingy);
   t2.position(gridSpacingx+(2*5), (1*gridSpacingy)+(2*5));
   t2.style('color', "#fff");
   t2.style('font-family: myFont');
-  t2.style("font-size", fontSize);
+  t2.style("font-size", t2FontSize);
   t2.style("background-color",col);
   t2.style("border-color",col);
   
   t3 = createButton(b1.questions[22]);
+   if(b1.questions[22].length <10){
+    t3FontSize = '40px'
+  }
+  else if(b1.questions[22].length <35){
+    t3FontSize = '25px'
+  }
+  else if(b1.questions[22].length<55){
+    t3FontSize = '20px'
+  }
   t3.size(gridSpacingx, gridSpacingy);
   t3.position((2*gridSpacingx)+(3*5), (1*gridSpacingy)+(2*5));
   t3.style('color', "#fff");
   t3.style('font-family: myFont');
   t3.style("font-family", myFont);
-  t3.style("font-size", fontSize);
+  t3.style("font-size", t3FontSize);
   t3.style("background-color",col);
   t3.style("border-color",col);
   
   t4 = createButton(b1.questions[33]);
+   if(b1.questions[33].length <10){
+    t4FontSize = '40px'
+  }
+  else if(b1.questions[33].length <35){
+    t4FontSize = '25px'
+  }
+  else if(b1.questions[33].length<55){
+    t4FontSize = '20px'
+  }
   t4.size(gridSpacingx, gridSpacingy);
   t4.position((3*gridSpacingx)+(4*5), (1*gridSpacingy)+(2*5));
   t4.style('color', "#fff");
   t4.style('font-family: myFont');
   t4.style("font-family", myFont);
-  t4.style("font-size", fontSize);
+  t4.style("font-size", t4FontSize);
   t4.style("background-color",col);
   t4.style("border-color",col);
   
   t5 = createButton(b1.questions[44]);
+   if(b1.questions[44].length <10){
+    t5FontSize = '40px'
+  }
+  else if(b1.questions[44].length <35){
+    t5FontSize = '25px'
+  }
+  else if(b1.questions[44].length<55){
+    t5FontSize = '20px'
+  }
   t5.size(gridSpacingx, gridSpacingy);
   t5.position((4*gridSpacingx)+(5*5), (1*gridSpacingy)+(2*5));
   t5.style('color', "#fff");
   t5.style('font-family: myFont');
   t5.style("font-family", myFont);
-  t5.style("font-size", fontSize);
+  t5.style("font-size", t5FontSize);
   t5.style("background-color",col);
   t5.style("border-color",col);
   
   t6 = createButton(b1.questions[55]);
+   if(b1.questions[55].length <10){
+    t6FontSize = '40px'
+  }
+  else if(b1.questions[55].length <35){
+    t6FontSize = '25px'
+  }
+  else if(b1.questions[55].length<55){
+    t6FontSize = '20px'
+  }
   t6.size(gridSpacingx, gridSpacingy);
   t6.position((5*gridSpacingx)+(6*5), (1*gridSpacingy)+(2*5));
   t6.style('color', "#fff");
   t6.style('font-family: myFont');
   t6.style("font-family", myFont);
-  t6.style("font-size", fontSize);
+  t6.style("font-size", t6FontSize);
   t6.style("background-color",col);
   t6.style("border-color",col);
   
@@ -1302,8 +1363,10 @@ function b1t11(){
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
+  
+  textWrap(WORD);
   textAlign(CENTER);
-  question = text(b1.questions[1], windowWidth/2, windowHeight/2);
+  question = text(b1.questions[1], 0, windowHeight/2, windowWidth-10);
 
   
   
@@ -1318,8 +1381,10 @@ function b1t12(){
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
+  textWrap(WORD);
   textAlign(CENTER);
-  question = text(b1.questions[3], windowWidth/2, windowHeight/2);
+  
+  question = text(b1.questions[3], 0,windowHeight/2,windowWidth-10);
   
   storeItem('t12Col',used);  value = 200;
 }
@@ -1330,7 +1395,8 @@ function b1t13(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[5], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[5], 0,windowHeight/2,windowWidth-10);
   
   storeItem('t13Col',used); 
   value = 300;
@@ -1342,7 +1408,8 @@ function b1t14(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[7], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[7], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t14Col',used);
   value = 400;
@@ -1354,7 +1421,8 @@ function b1t15(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[9], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[9], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t15Col',used);
   value = 500;
@@ -1366,7 +1434,8 @@ function b1t21(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[12], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[12], 0,windowHeight/2,windowWidth-10);
   
   storeItem('t21Col',used);
   value = 100;
@@ -1377,7 +1446,8 @@ function b1t22(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[14], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[14], 0,windowHeight/2,windowWidth-10);
 
    storeItem('t22Col',used);
   value = 200;
@@ -1388,7 +1458,8 @@ function b1t23(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[16], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[16], 0,windowHeight/2,windowWidth-10);
 
    storeItem('t23Col',used);
   value = 300;
@@ -1399,7 +1470,8 @@ function b1t24(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[18], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[18], 0,windowHeight/2,windowWidth-10);
 
    storeItem('t24Col',used);
   value = 400;
@@ -1410,7 +1482,8 @@ function b1t25(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[20], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[20], 0,windowHeight/2,windowWidth-10);
 
    storeItem('t25Col',used);
   value = 500;
@@ -1421,7 +1494,8 @@ function b1t31(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[23], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[23], 0,windowHeight/2,windowWidth-10);
   
   storeItem('t31Col',used);
   value = 100;
@@ -1432,7 +1506,8 @@ function b1t32(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[25], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[25], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t32Col',used);
   value = 200;
@@ -1443,7 +1518,8 @@ function b1t33(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[27], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[27], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t33Col',used);
   value = 300;
@@ -1454,7 +1530,8 @@ function b1t34(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[29], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[29], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t34Col',used);
   value = 400;
@@ -1465,7 +1542,8 @@ function b1t35(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[31], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[31], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t35Col',used);
   value = 500;
@@ -1476,7 +1554,8 @@ function b1t41(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[34], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[34], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t41Col',used);
   value = 100;
@@ -1487,7 +1566,8 @@ function b1t42(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[36], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[36], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t42Col',used);
   value = 200;
@@ -1498,7 +1578,8 @@ function b1t43(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[38], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[38], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t43Col',used);
   value = 300;
@@ -1509,7 +1590,8 @@ function b1t44(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[40], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[40], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t44Col',used);
   value = 400;
@@ -1520,7 +1602,8 @@ function b1t45(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[42], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[42], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t45Col',used);
   value = 500;
@@ -1531,7 +1614,8 @@ function b1t51(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[45], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[45], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t51Col',used);
   value = 100;
@@ -1542,7 +1626,8 @@ function b1t52(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[47], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[47], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t52Col',used);
   value = 200;
@@ -1553,7 +1638,8 @@ function b1t53(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[49], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[49], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t53Col',used);
   value = 300;
@@ -1564,7 +1650,8 @@ function b1t54(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[51], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[51], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t54Col',used);
   value = 400;
@@ -1575,7 +1662,8 @@ function b1t55(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[53], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[53], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t55Col',used);
   value = 500;
@@ -1586,7 +1674,8 @@ function b1t61(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[56], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[56], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t61Col',used);
   value = 100;
@@ -1597,7 +1686,8 @@ function b1t62(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[58], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[58], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t62Col',used);
   value = 200;
@@ -1608,7 +1698,8 @@ function b1t63(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[60], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[60], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t63Col',used);
   value = 300;
@@ -1619,7 +1710,8 @@ function b1t64(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[62], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[62], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t64Col',used);
   value = 400;
@@ -1631,7 +1723,8 @@ function b1t65(){
   textSize(textFontSize);
   fill('#FFCC00');
   textAlign(CENTER);
-  question = text(b1.questions[64], windowWidth/2, windowHeight/2);
+  textWrap(WORD);
+  question = text(b1.questions[64], 0,windowHeight/2,windowWidth-10);
 
   storeItem('t65Col',used);
   value = 500;
@@ -2007,7 +2100,6 @@ function B1Final(){
 }
 function checkDone(boardNum){
   if(boardNum == 1 && getItem('t11Col') == used&& getItem('t12Col') == used&& getItem('t13Col') == used&& getItem('t14Col') == used&& getItem('t15Col') == used&& getItem('t61Col') == used&& getItem('t62Col') == used&& getItem('t63Col') == used&& getItem('t64Col') == used&& getItem('t65Col') == used&& getItem('t21Col') == used&& getItem('t22Col') == used&& getItem('t23Col') == used&& getItem('t24Col') == used&& getItem('t25Col') == used&& getItem('t31Col') == used&& getItem('t32Col') == used&& getItem('t33Col') == used&& getItem('t34Col') == used&& getItem('t35Col') == used&& getItem('t41Col') == used&& getItem('t42Col') == used&& getItem('t43Col') == used&& getItem('t44Col') == used&& getItem('t45Col') == used&& getItem('t51Col') == used&& getItem('t52Col') == used&& getItem('t53Col') == used&& getItem('t54Col') == used&& getItem('t55Col') == used){
-    print("yay");
     return true;
   }
 }
