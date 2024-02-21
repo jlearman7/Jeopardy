@@ -47,10 +47,10 @@ function windowResized() {
     fontSize = '65px'  
   }
   else if(windowWidth<1250){
-    fontSize='80px';
+    fontSize='75px';
   }
   else if(windowWidth<1500){
-    fontSize='100px'
+    fontSize='95px'
   }
   else if(windowWidth<1750){
     fontSize='100px'
@@ -133,7 +133,7 @@ function setup() {
   else{
     mainMenu();
   }
-  
+  B1Final();
   
   
 }
@@ -2061,8 +2061,9 @@ function B1Final(){
   background(6, 12, 233);
   textSize(textFontSize);
   fill('#FFCC00');
+  textWrap(WORD);
   textAlign(CENTER);
-  question = text(b1.final, windowWidth/2, windowHeight/2);
+  question = text(b1.final, 0,windowHeight/2,windowWidth-10);
   
   player1 = createButton(p1.name+": "+p1.points);
   player1.style('color:col');
