@@ -133,7 +133,6 @@ function setup() {
   else{
     mainMenu();
   }
-  B1Final();
   
   
 }
